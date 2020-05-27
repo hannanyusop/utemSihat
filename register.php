@@ -49,7 +49,7 @@
                             <div class="row my-4">
                                 <div class="col-12">
                                     <div class="custom-control custom-control-alternative custom-checkbox">
-                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                                        <input class="custom-control-input" name="agree" id="agree" type="checkbox">
                                         <label class="custom-control-label" for="customCheckRegister">
                                             <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
                                         </label>
@@ -67,7 +67,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="register.php" class="text-light"><small>Already Have Account? Login</small></a>
+                        <a href="login.php" class="text-light"><small>Already Have Account? Login</small></a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,8 @@
                 minlength: 5,
             },
             password_confirm : {
-                equalTo : '#password'
+                equalTo : '#password',
+                required : true
             }
         },
         messages: {
