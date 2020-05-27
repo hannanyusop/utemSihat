@@ -16,3 +16,4 @@
 <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
 <script src="assets/js/argon.min5438.js?v=1.2.0"></script>
 <script src="assets/js/demo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
