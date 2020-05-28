@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="assets/css/argon.min5438.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
     <!-- Google Tag Manager -->
 
 </head>

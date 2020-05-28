@@ -2,72 +2,6 @@
 <?php include ('include/header.php'); ?>
 
 <body class="bg-default">
-
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
-    <div class="container">
-        <a class="navbar-brand" href="dashboards/dashboard.html">
-            <img src="assets/img/brand/white.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
-            <div class="navbar-collapse-header">
-                <div class="row">
-                    <div class="col-6 collapse-brand">
-                        <a href="../dashboards/dashboard.html">
-                            <img src="assets/img/brand/blue.png">
-                        </a>
-                    </div>
-                    <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a href="../dashboards/dashboard.html" class="nav-link">
-                        <span class="nav-link-inner--text">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pricing.html" class="nav-link">
-                        <span class="nav-link-inner--text">Pricing</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link">
-                        <span class="nav-link-inner--text">Login</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="register.html" class="nav-link">
-                        <span class="nav-link-inner--text">Register</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="lock.html" class="nav-link">
-                        <span class="nav-link-inner--text">Lock</span>
-                    </a>
-                </li>
-            </ul>
-            <hr class="d-lg-none" />
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-                <li class="nav-item d-none d-lg-block ml-lg-4">
-                    <a href="register.php" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fas fa-user-alt mr-2"></i>
-              </span>
-                        <span class="nav-link-inner--text">Create Account For Free</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 <!-- Main content -->
 <div class="main-content">
     <!-- Header -->
@@ -99,20 +33,10 @@
                         </div>
                         <form role="form" method="post" action="login-verify.php">
                             <div class="form-group mb-3">
-                                <div class="input-group input-group-merge input-group-alternative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                    </div>
-                                    <input class="form-control" name="email" placeholder="Email" type="email">
-                                </div>
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email">
                             </div>
                             <div class="form-group">
-                                <div class="input-group input-group-merge input-group-alternative">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                    </div>
-                                    <input class="form-control" name="password" placeholder="Password" type="password">
-                                </div>
+                                <input class="form-control" id="password" name="password" placeholder="Password" type="password">
                             </div>
                             <div class="custom-control custom-control-alternative custom-checkbox">
                                 <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
@@ -141,4 +65,27 @@
 </body>
 
 <?php include('include/footer.php'); ?>
+<script type="text/javascript">
+    var $form = $("form"),
+        $successMsg = $(".alert");
+    $form.validate({
+        rules: {
+            password: {
+                required: true,
+                minlength: 3,
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Please specify your name (only letters and spaces are allowed)",
+            email: "Please specify a valid email address"
+        },
+        submitHandler: function() {
+            $successMsg.show();
+        }
+    });
+</script>
 </html>
