@@ -134,7 +134,7 @@
             email: "Please specify a valid email address"
         },
         submitHandler: function() {
-            $successMsg.show();
+            form.submit();
         }
     });
 </script>
