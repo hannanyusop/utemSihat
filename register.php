@@ -113,7 +113,12 @@
             },
             email: {
                 required: true,
-                email: true
+                email: true,
+                // remote: {
+                //     message: 'The email is not available',
+                //     method: 'POST',
+                //     url: 'check-email.php',
+                // }
             },
             password : {
                 required : true,
